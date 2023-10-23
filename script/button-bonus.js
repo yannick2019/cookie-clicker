@@ -1,6 +1,6 @@
 const bonusButton = document.getElementById("bonusButton"); 
 const bonusPriceLabel = document.getElementById('bonus-price');
-//let bonusCost = 100; 
+let bonusCost = 100; 
 let bonusDuration = 30; // Duration of the bonus in seconds
 let bonusActive = false;
 let bonusTimerInterval = null;
