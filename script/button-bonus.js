@@ -1,9 +1,8 @@
 const bonusButton = document.getElementById("bonusButton"); 
 const bonusPriceLabel = document.getElementById('bonus-price');
 let bonusCost = 100; 
-let bonusDuration = 30; // Duration of the bonus in seconds
-let bonusActive = false;
-let bonusTimerInterval = null;
+let bonusTime = 0;
+let originalMultiplier = 1; // Store the original multiplier value
 
 
 function increaseBonusCost() {
@@ -11,38 +10,33 @@ function increaseBonusCost() {
     bonusPriceLabel.textContent = bonusCost;
 }
 
-function enableBonus() {
-
-    if (bonusActive) return;
-
-    bonusActive = true;
-    multiplier *= 2; // Double the click multiplier
-
-    bonusTimerInterval = setInterval(() => {
-        bonusDuration--;
-        if (bonusDuration <= 0) {
-            clearInterval(bonusTimerInterval);
-            bonusActive = false;
-            multiplier /= 2; // Reset the click multiplier
-            bonusButton.textContent = `Acheter Bonus (Prix: ${bonusCost})`;
-        } else {
-            bonusButton.textContent = `Bonus Actif (${bonusDuration} sec)`;
-        }
-    }, 1000); // Update the timer every second
-
-    setTimeout(() => {
-        clearInterval(bonusTimerInterval);
-        bonusActive = false;
-        multiplier /= 2; // Reset the click multiplier
-        bonusButton.textContent = `Acheter Bonus (Prix: ${bonusCost})`;
-    }, bonusDuration * 1000); // Deactivate the bonus after the specified duration
+function checkScoreAndEnableButton() {
+    // checks if score is enough to buy bonus button
+    bonusButton.disabled = score < bonusCost;
 }
 
 bonusButton.addEventListener('click', () => {
-    if (score >= bonusCost) {
-        score -= bonusCost; // Deduct the price from the score
-        increaseBonusCost(); // Increase the cost for the next purchase
-        enableBonus(); 
-        scoreElement.textContent = score; // Update the score and label
+    if (score >= bonusCost && bonusTime === 0) {
+        score -= bonusCost;
+        bonusTime = 30; // Set the bonus duration to 30 seconds
+        increaseBonusCost();        
+        multiplier *= 2;
+        bonusButton.textContent = `Bonus actif ( ${bonusTime}s )`;
+        
+        // Start the bonus timer
+        const bonusTimerInterval = setInterval(() => {
+            if (bonusTime > 0) {
+                bonusTime--;
+                bonusButton.textContent = `Bonus actif ( ${bonusTime}s )`;
+            } else {
+                clearInterval(bonusTimerInterval); // Stop the timer when the bonus ends
+                bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
+                multiplier = originalMultiplier; // Reset the click multiplier
+            }
+        }, 1000);
     }
 });
+
+checkScoreAndEnableButton(); //initialise autoclicker button status on page load
+
+setInterval(checkScoreAndEnableButton, 100); //checks every 0.1s (quick refresh)
