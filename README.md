@@ -27,6 +27,10 @@ Auto-Clicker: Jerome will take charge of this on Monday throughout the day.
 Bonus Button: Yannick will handle this on Monday throughout the day.
 By the end of the day, we will merge our respective branches.
 
+To track our progress, we are utilizing the Trello project management tool. 
+
+https://trello.com/invite/b/rjWyubMI/ATTI6b4c341f6abbdc0a9ca9eee3c2ccc45aC1F254A0/cookie-clicker
+
 # Preview
 
 ## Achievements
