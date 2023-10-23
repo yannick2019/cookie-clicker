@@ -7,13 +7,17 @@
     <title>Cookie Clicker</title>
   </head>
   <body>
+    <header>
+      <img src="./assets/images/cookie1.png" alt="logo">
+      <button id="switch-mode-btn">Dark mode</button> 
+    </header>
     <div class="clicker-container">
       <h1>Cookie Clicker</h1>
       <div class="score-container">
         <p>Score: <span id="score">0</span></p>
       </div>
       <div class="cookie-container">
-        <img src="assets/image/cookie1.png" alt="Cookie Image" id="cookieImage" />
+        <img src="./assets/images/cookie1.png" alt="Cookie Image" id="cookieImage" />        
       </div>
       <button id="multiplierButton">Multiplier x1 (<strong id="multiplier-price">100</strong>)</button>
       <button id="autoClickButton">Auto-Clicker ($50)</button>
@@ -21,6 +25,9 @@
       <button id="clickButton" style="display: none"></button>
     </div>
 
+  
+  
+    <script src="./script/light-dark-mode.js"></script>
     <script src="/script/button-bonus.js"></script>
     <script src="/script/button.js"></script>
     <script src="/script/multiplier-cost-increase.js"></script>
