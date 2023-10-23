@@ -23,6 +23,7 @@ function updateScore(){
 /**AUTOCLICK */
 const autoClickButton = document.getElementById('autoClickButton');
 
+let autoClickers = 0;
 let autoClickerCost = 50;
 let autoClickInterval = null;
 
@@ -32,7 +33,7 @@ function checkScoreAndEnableButton() {
 }
 
 function updateAutoClickButtonText() {
-    autoClickButton.innerText = `Auto-Clicker ($${autoClickerCost})`;
+    autoClickButton.innerText = `Auto-Clicker x${autoClickers} ($${autoClickerCost})`;
 }
 
 autoClickButton.addEventListener('click', () => {
@@ -40,14 +41,15 @@ autoClickButton.addEventListener('click', () => {
         score -= autoClickerCost;   // the cost is deducted from the score, and the score is updated
         updateScore();
 
-         // cost of the Auto-Clicker is increased for the next purchase (15% rounded up).
+         // increase number of autoclickers and cost for the next purchase (15% rounded up).
+        autoClickers ++;
         autoClickerCost += Math.ceil(autoClickerCost * 0.15 );
         updateAutoClickButtonText();
 
         // start auto-click interval
         if (!autoClickInterval) { 
             autoClickInterval = setInterval( () => { //starts interval to increment score by current multiplier
-                score += multiplier;
+                score += multiplier * autoClickers;
                 updateScore();
                 checkScoreAndEnableButton(); // checks and enable button in real-time
             }, 1000); // auto-click every 1 second (= 1000ms)
