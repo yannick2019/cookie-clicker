@@ -43,6 +43,6 @@ bonusButton.addEventListener('click', () => {
         score -= bonusCost; // Deduct the price from the score
         increaseBonusCost(); // Increase the cost for the next purchase
         enableBonus(); 
-        scoreLabel.textContent = score; // Update the score and label
+        scoreElement.textContent = score; // Update the score and label
     }
 });
