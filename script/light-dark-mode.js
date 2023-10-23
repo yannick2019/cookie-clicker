@@ -8,10 +8,10 @@ let nightMode = false;
 const switchMode = () => {
     nightMode = !nightMode;
     if (nightMode) {
-        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundColor = "rgb(53, 54, 58)";
         document.body.style.color = "#fff";
         mode.textContent = "Light Mode";
-        header.style.backgroundColor = "#2d3436";
+        header.style.backgroundColor = "#212020";
         //header.style.boxShadow = "none";
     } else {
         document.body.style.backgroundColor = "#fff";
