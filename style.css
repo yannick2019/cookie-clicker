@@ -37,6 +37,7 @@ header > img {
     width: 40px; 
     height: auto;
     margin-right: 10px;
+    margin-bottom: 4px;
 }
 
 header > button {
@@ -44,6 +45,7 @@ header > button {
     width: auto;
     height: 2.2rem;
     padding: 0 20px;
+    margin-bottom: 8px;
     font-size: 14px; 
     border: none;
     border-radius: 5px;
@@ -152,7 +154,7 @@ button {
 /* Responsive design for desktop */
 @media (min-width: 1025px) {
     header > img {
-        width: 80px; 
+        width: 60px; 
     }
 
     header > button {
