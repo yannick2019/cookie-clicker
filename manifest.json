@@ -1,0 +1,24 @@
+{
+    "name": "Cookie Clicker",
+    "short_name": "Cookie Clicker",
+    "description": "Indulge in the addictive fun of our Cookie Clicker game. Click your way to delicious success as you collect cookies, unlock multipliers, and enjoy various upgrades. How many cookies can you accumulate? Play now and satisfy your virtual sweet tooth!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#dfe6e9",
+    "icons": [
+        {
+          "src": "./assets/images/cookie-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "./assets/images/maskable-icon.png", 
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable" 
+        }
+      ]
+      
+}
+  

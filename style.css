@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&family=Roboto:wght@100;300;400;500&family=Rubik:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&family=Roboto:wght@100;300;400;500&family=Rubik:wght@500&display=swap");
 
 /* reset some default styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -24,6 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     padding: 0 20px;
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
@@ -38,10 +40,15 @@ header > img {
 }
 
 header > button {
+    display: inline-block;
     width: auto;
     height: 2.2rem;
     padding: 0 20px;
     font-size: 14px; 
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
 }
 
 /* Content */
@@ -58,6 +65,10 @@ header > button {
 h1 {
     font-size: 24px;
     margin: 0;
+}
+
+strong {
+  font-weight: inherit;
 }
 
 .score-container {
@@ -80,12 +91,14 @@ h1 {
 button {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #3498db; /* example color to be adjusted */
-    color: white;
+    background-color: #fbd81a;
+    color: #72371b;
+    font-weight: 700;
     border: none;
     cursor: pointer;
     margin-top: 10px;
     width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive design for mobile */
@@ -150,3 +163,4 @@ button {
         width: 150px; 
     }
 }
+
