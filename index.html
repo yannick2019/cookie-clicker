@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Indulge in the addictive fun of our Cookie Clicker game. Click your way to delicious success as you collect cookies, unlock multipliers, and enjoy various upgrades. How many cookies can you accumulate? Play now and satisfy your virtual sweet tooth!">
+    <meta name="theme-color" content="#dfe6e9">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css" />
     <title>Cookie Clicker</title>
   </head>
@@ -12,29 +17,21 @@
       <button id="switch-mode-btn">Dark mode</button>
       <button id="resetButton" class="button">Restart</button>
     </header>
-    <div class="clicker-container">
+    <main class="clicker-container">
       <h1>Cookie Clicker</h1>
-      <div class="score-container">
+      <section class="score-container">
         <p>Score: <span id="score">0</span></p>
-      </div>
-      <div class="cookie-container">
-        <img
-          src="./assets/images/cookie1.png"
-          alt="Cookie Image"
-          id="cookieImage"
-          class="rotation"
-        />
-      </div>
 
-      <button id="multiplierButton" class="button">
-        Multiplier x1 (x2 Prix: <strong id="multiplier-price">100</strong>)
-      </button>
+      </section>
+      <figure class="cookie-container">
+        <img src="./assets/images/cookie1.png" alt="Cookie Image" id="cookieImage" class="rotation"/>        
+      </figure>
+      <button id="multiplierButton" class="button">Multiplier x1 (x2 Prix: <strong id="multiplier-price">100</strong>)</button>
       <button id="autoClickButton" class="button">Auto-Clicker ($50)</button>
-      <button id="bonusButton" class="button">
-        Bonus (200%) - Prix: $<strong id="bonus-price">20</strong>
-      </button>
+      <button id="bonusButton" class="button">Bonus (200%) - Prix: $<strong id="bonus-price">100</strong></button>
+
       <button id="clickButton" style="display: none"></button>
-    </div>
+    </main>
 
     <script src="./script/light-dark-mode.js"></script>
     <script src="/script/button-bonus.js"></script>
