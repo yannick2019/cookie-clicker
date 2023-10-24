@@ -21,11 +21,19 @@ Here are the highlights:
 We will structure our project as follows:
 
 ### Each of us will be responsible for a specific part of the JavaScript development:
-
+#### Monday 
 - Multiplier Button: Hamid will work on this on Monday throughout the day, and README file.
 - Auto-Clicker: Jerome will take charge of this on Monday throughout the day.
 - Bonus Button: Yannick will handle this on Monday throughout the day.
 - By the end of the day, we will merge our respective branches.
+
+#### Tuesday
+
+our plan until the lunch break is as follows:
+
+- Yannick: Layout and responsiveness
+- Hamid: Button design
+- Jerome: Semantic improvements
 
 To track our progress, we are utilizing the Trello project management tool. 
 
