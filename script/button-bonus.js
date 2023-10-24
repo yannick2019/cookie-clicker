@@ -2,7 +2,7 @@ const bonusButton = document.getElementById("bonusButton");
 const bonusPriceLabel = document.getElementById('bonus-price');
 let bonusCost = 100; 
 let bonusTime = 0;
-let originalMultiplier = 1; // Store the original multiplier value
+// let originalMultiplier = multiplier; // Store the original multiplier value
 
 
 function increaseBonusCost() {
@@ -31,7 +31,7 @@ bonusButton.addEventListener('click', () => {
             } else {
                 clearInterval(bonusTimerInterval); // Stop the timer when the bonus ends
                 bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
-                multiplier = originalMultiplier; // Reset the click multiplier
+                multiplier /= 2; // Reset the click multiplier to state before bonus
             }
         }, 1000);
     }
