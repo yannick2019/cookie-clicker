@@ -61,5 +61,46 @@ checkScoreAndEnableButton(); //initialise autoclicker button status on page load
 
 setInterval(checkScoreAndEnableButton, 100); //checks every 0.1s (quick refresh)
 
+/*
+const autoClickButton2 = document.getElementById('autoClickButton2');
 
+let autoClickers2 = 0;
+let autoClicker2Cost = 50;
+let autoClick2Interval = null;
+
+function checkScoreAndEnableButton2() {
+    // checks if score is enough to buy auto-clicker 2
+    autoClickButton2.disabled = score < autoClicker2Cost;
+}
+
+function updateAutoClickButton2Text() {
+    autoClickButton2.innerText = `Auto-Clicker 2 x${autoClickers2} ($${autoClicker2Cost})`;
+}
+
+autoClickButton2.addEventListener('click', () => {
+    if (score >= autoClicker2Cost) { //checks if the player has enough score to purchase it
+        score -= autoClicker2Cost;   // the cost is deducted from the score, and the score is updated
+        updateScore();
+
+         // increase number of autoclickers and cost for the next purchase (15% rounded up).
+        autoClickers2 ++;
+        autoClicker2Cost += Math.ceil(autoClicker2Cost * 0.15 );
+        updateAutoClickButton2Text();
+
+        // start auto-click interval
+        if (!autoClick2Interval) { 
+            autoClick2Interval = setInterval( () => { //starts interval to increment score by current multiplier
+                score += multiplier * autoClickers;
+                updateScore();
+                checkScoreAndEnableButton2(); // checks and enable button in real-time
+            }, 1000); // auto-click every 1 second (= 1000ms)
+        }
+    }
+});
+
+checkScoreAndEnableButton2(); //initialise autoclicker button status on page load
+
+setInterval(checkScoreAndEnableButton2, 100); //checks every 0.1s (quick refresh)
+
+*/
 
