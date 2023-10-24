@@ -18,7 +18,7 @@ function rotateImage() {
           .replace("rotate(", "")
           .replace("deg)", "")
       ) || 0;
-    rotation += 0.5;
+    rotation += 0.1;
     cookieImages[i].style.transform = `rotate(${rotation}deg)`;
   }
   requestAnimationFrame(rotateImage);
