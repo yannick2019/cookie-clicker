@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 /* Header */
@@ -31,7 +31,7 @@ header {
 }
 
 header > img {
-    width: 40px; 
+    width: 36px; 
     height: auto;
     margin-right: 10px;
     margin-bottom: 4px;
@@ -39,9 +39,9 @@ header > img {
 
 header .menu > button {
     display: inline-block;
-    width: 8rem;
+    width: 7.4rem;
     height: 2.2rem;
-    padding: 0 20px;
+    padding: 0 12px;
     margin-bottom: 8px;
     font-size: 14px; 
     border: none;
@@ -56,13 +56,17 @@ header .menu > button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     text-align: center;
-    padding: 20px;
+    padding: 14px;
     width: 100%;
 }
 
 h1 {
     font-size: 24px;
     margin: 0;
+}
+
+hr {
+    margin: 1rem 0;
 }
 
 strong {
@@ -81,18 +85,19 @@ strong {
     margin: 20px 0;
 }
 
-.cookie-container img {
-    width: 150px;
+.container .cookie-section .cookie-container img {
+    width: 200px;
     height: auto;
 }
 
 button {
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px 20px;
     background-color: #fbd81a;
     color: #72371b;
     font-weight: 700;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
     width: 100%;
@@ -106,27 +111,24 @@ button {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 2%;
+    padding: 0 8%;
 }
 
 .cookie-section {
-    /*max-width: 500px;*/
     flex-basis: 40%;
-    height: 600px;
+    height: 400px;
     order: 2;
 }
 
 .store {
-    /*max-width: 360px;*/
-    flex-basis: 26%;
-    height: 600px;
+    flex-basis: 28%;
+    height: 400px;
     order: 3;
 }
 
 .inventory {
-    /*max-width: 360px;*/
-    flex-basis: 26%;
-    height: 600px;
+    flex-basis: 28%;
+    height: 400px;
     order: 1;
 }
 
@@ -144,6 +146,11 @@ button {
     transition: all 0.3s ease;
     background-color: #9a5738;
 }
+
+.container .cookie-section .score-container {
+    font-size: 23px;
+}
+
 
 /* Responsive design for mobile */
 @media (max-width: 768px) {
@@ -196,10 +203,6 @@ button {
         margin: 20px 0;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
     .score-container {
         font-size: 16px;
     }
@@ -209,7 +212,45 @@ button {
     }
 
     button {
-        font-size: 14px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    /* layout */
+    .container {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 0 6%;
+    }
+    
+    .cookie-section {
+        flex-basis: 100%;
+        height: 400px;
+        order: 1;
+    }
+    
+    .store {
+        flex-basis: 100%;
+        height: 400px;
+        order: 3;
+    }
+    
+    .inventory {
+        flex-basis: 100%;
+        height: 400px;
+        order: 2;
+    }
+
+    .container {
+        font-size: 120%;
+    }
+    .container .cookie-section > h1 {
+        font-size: 180%;
+    }
+
+    .container .store button {
+        font-size: 1rem;
     }
 }
 
@@ -225,6 +266,37 @@ button {
 
     .cookie-container img {
         width: 125px;
+    }
+
+    .container .cookie-section > h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        padding: 0 10%;
+    }
+
+    .cookie-section {
+        flex-basis: 100%;
+        height: 400px;
+        order: 1;
+        margin-bottom: 2%;
+    }
+    
+    .store {
+        flex-basis: 49%;
+        height: 400px;
+        order: 3;
+    }
+    
+    .inventory {
+        flex-basis: 49%;
+        height: 400px;
+        order: 2;
+    }
+
+    .container .store button {
+        font-size: 1rem;
     }
 }
 

@@ -11,11 +11,6 @@ cookieImage.addEventListener('click', () => {
     updateScore();
 });
 
-clickButton.addEventListener('click', () =>{
-    score += multiplier;
-    updateScore();
-})
-
 function updateScore(){
     scoreElement.textContent = score;
 }
@@ -33,10 +28,11 @@ function checkScoreAndEnableButton() {
 }
 
 function updateAutoClickButtonText() {
-    autoClickButton.innerText = `Auto-Clicker x${autoClickers} ($${autoClickerCost})`;
+    autoClickButton.innerText = `Auto-Clicker x${autoClickers} (x${autoClickers + 1} Prix: $${autoClickerCost})`;
 }
 
 autoClickButton.addEventListener('click', () => {
+    console.log("autoClick");
     if (score >= autoClickerCost) { //checks if the player has enough score to purchase it
         score -= autoClickerCost;   // the cost is deducted from the score, and the score is updated
         updateScore();

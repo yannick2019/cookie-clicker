@@ -13,9 +13,9 @@
   </head>
   <body>
     <header>
-      <img src="./assets/images/cookie1.webp" alt="logo" />
+      <img src="./assets/images/clicker-icon.webp" alt="logo" />
       <nav class="menu">
-        <button id="instruction-btn" class="button">Instruction</button>
+        <button id="instruction-btn" class="button">Instructions</button>
         <button id="switch-mode-btn" class="button">Dark mode</button>
         <button id="resetButton" class="button">Restart</button>
       </nav>
@@ -27,30 +27,35 @@
     </header>
     <main class="container">
       <section class="cookie-section clicker-container">
-        <h1>Cookie Clicker</h1>
+        <h1>Miner Clicker</h1>
+        <hr>
         <section class="score-container">
-          <p>Score: <span id="score">0</span></p>
+          <p>Score: <strong id="score">0</strong></p>
         </section>
         <figure class="cookie-container">
-          <img src="./assets/images/cookie1.webp" alt="Cookie Image" id="cookieImage" class="rotation"/>        
+          <img src="./assets/images/clicker-icon.webp" alt="Cookie Image" id="cookieImage" class="rotation"/>        
         </figure>
       </section>
       <section class="store clicker-container">
         <h2>Store</h2>
-        <button id="multiplierButton" class="button">Multiplier x1 (x2 Prix: <strong id="multiplier-price">100</strong>)</button>
-        <button id="autoClickButton" class="button">Auto-Clicker ($50)</button>
+        <hr>
+        <button id="multiplierButton" class="button">Multiplier x1 (x2 Prix: $<strong id="multiplier-price">100</strong>)</button>
+        <button id="autoClickButton" class="button">Auto-Clicker (Prix: $50)</button>
         <button id="bonusButton" class="button">Bonus (200%) - Prix: $<strong id="bonus-price">100</strong></button>
       </section>
       <section class="inventory clicker-container">
         <h2>Inventory</h2>
+        <hr>
       </section>
     </main>
 
+
+
+    <script src="./script/navbar-mobile.js"></script>
     <script src="./script/light-dark-mode.js"></script>
-    <script src="/script/button-bonus.js"></script>
     <script src="/script/button.js"></script>
     <script src="/script/multiplier-cost-increase.js"></script>
-
+    <script src="/script/button-bonus.js"></script>
     <script src="./script/button-style.js"></script>
     <script src="./script/reset.js"></script>
   </body>
