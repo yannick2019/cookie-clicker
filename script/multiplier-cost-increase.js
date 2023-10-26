@@ -9,7 +9,7 @@ function updateMultiplierPrice() {
 }
 
 function updateMultiplierButtonText() {
-    multiplierButton.textContent = `Multiplier x${multiplier} ( x${multiplier + 1} prix ${multiplierPrice} )`;
+    multiplierButton.textContent = `Multiplier x${multiplier} ( x${multiplier + 1} Prix: $${multiplierPrice} )`;
 }
 
 function increaseMultiplierCost() {
@@ -19,7 +19,6 @@ function increaseMultiplierCost() {
 }
 
 function checkScoreAndEnableButton() {
-    // checks if score is enough to buy bonus button
     multiplierButton.disabled = score < multiplierPrice;
 }
 
