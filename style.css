@@ -15,6 +15,10 @@ body {
     background-color: #fff;
 }
 
+.dark-mode {
+    background-color: rgb(53, 54, 58);
+}
+
 /* Header */
 header {
     background-color: #dfe6e9; /* example color define later */
@@ -31,10 +35,10 @@ header {
 }
 
 header > img {
-    width: 36px; 
+    width: 30px; 
     height: auto;
     margin-right: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 header .menu > button {
@@ -48,6 +52,14 @@ header .menu > button {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 3%;
+    transition: background-color 0.3s ease; /* add transition for smooth color change */
 }
 
 /* Content */
@@ -151,6 +163,82 @@ button {
     font-size: 23px;
 }
 
+/* Toggle button dark/light mode  START */
+.switch-mode-toggle {
+    display: flex;
+}
+label {
+    width: 66px;
+    height: 28px;
+    position: relative;
+    top: 2px;
+    display: block;
+    background: #fff;
+    border-radius: 28px;
+    
+    cursor: pointer;
+    transition: 0.3s;
+}
+label:after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(180deg,#ffcc89,#fbd81a);
+    border-radius: 24px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label {
+    background: rgb(53, 54, 58);
+}
+input:checked + label:after {
+    left: 60px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+}
+label:active:after {
+    width: 36px;
+}
+
+label svg {
+    position: absolute;
+    width: 20px;
+    top: 3px;
+    z-index: 100;
+}
+label svg.sun {
+    left: 3px;
+    fill: #fff;
+    transition: 0.3s;
+}
+label svg.moon {
+    left: 39px;
+    fill: #7e7e7e;
+    transition: 0.3s;
+}
+
+input:checked + label svg.sun {
+    fill: #7e7e7e;
+}
+input:checked + label svg.moon {
+    fill: #fff;
+}
+
+/* Swith to dark/light mode */
+input:checked + label + .dark-mode {
+    background-color: #242424;
+}
+
+/* Toggle button dark/light mode  END */
+
 
 /* Responsive design for mobile */
 @media (max-width: 768px) {
@@ -173,16 +261,15 @@ button {
 
     .menu {
         display: flex;
-        position: fixed;
+        position: absolute;
         left: -100%;
         top: 60px;
-        gap: 0;
         flex-direction: column;
         background-color: #dfe6e9;
         width: 100%;
-        height: 158px;
-        align-items: center;
+        height: 240px;
         justify-content: center;
+        align-items: center;
         transition: 0.3s;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     }
