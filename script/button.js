@@ -13,6 +13,11 @@ cookieImage.addEventListener('click', () => {
 
 function updateScore(){
     scoreElement.textContent = score;
+    if (score < 50) {
+        scoreElement.style.color = "red";
+    } else {
+        scoreElement.style.color = "green";
+    }
 }
 
 /**AUTOCLICK */
