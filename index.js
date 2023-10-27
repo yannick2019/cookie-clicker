@@ -20,6 +20,38 @@ function updateScore(){
     }
 }
 
+// multiplier button
+const multiplierButton = document.getElementById("multiplierButton");
+const multiplierPriceLabel = document.getElementById('multiplier-price');
+let multiplierPrice = 20; 
+let multiplierPurchaseCount = 0;
+
+
+function updateMultiplierPrice() {
+    multiplierPriceLabel.textContent = multiplierPrice;
+}
+
+function updateMultiplierButtonText() {
+    multiplierButton.textContent = `Multiplier x${multiplier} ( x${multiplier + 1} Prix: $${multiplierPrice} )`;
+}
+
+function increaseMultiplierCost() {
+    multiplierPrice = Math.ceil(multiplierPrice * 1.5); 
+    updateMultiplierPrice(); 
+    multiplierPurchaseCount++; 
+}
+
+multiplierButton.addEventListener('click', () => {
+    if (score >= multiplierPrice) {
+        score -= multiplierPrice; 
+        multiplier += 1;
+        increaseMultiplierCost();
+        updateMultiplierButtonText(); 
+        scoreElement.textContent = score; 
+        multiplierButton.disabled = score < multiplierPrice;
+    }
+});
+
 /**AUTOCLICK */
 const autoClickButton = document.getElementById('autoClickButton');
 
@@ -64,39 +96,6 @@ buttons.forEach((button) => {
     button.style.backgroundColor = "#fbd81a";
     button.style.color = "#72371b";
   });
-});
-
-
-// multiplier button
-const multiplierButton = document.getElementById("multiplierButton");
-const multiplierPriceLabel = document.getElementById('multiplier-price');
-let multiplierPrice = 100; 
-let multiplierPurchaseCount = 0;
-
-
-function updateMultiplierPrice() {
-    multiplierPriceLabel.textContent = multiplierPrice;
-}
-
-function updateMultiplierButtonText() {
-    multiplierButton.textContent = `Multiplier x${multiplier} ( x${multiplier + 1} Prix: $${multiplierPrice} )`;
-}
-
-function increaseMultiplierCost() {
-    multiplierPrice = Math.ceil(multiplierPrice * 1.5); 
-    updateMultiplierPrice(); 
-    multiplierPurchaseCount++; 
-}
-
-multiplierButton.addEventListener('click', () => {
-    if (score >= multiplierPrice) {
-        score -= multiplierPrice; 
-        multiplier += 1;
-        increaseMultiplierCost();
-        updateMultiplierButtonText(); 
-        scoreElement.textContent = score; 
-        multiplierButton.disabled = score < multiplierPrice;
-    }
 });
 
 
