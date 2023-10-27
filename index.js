@@ -7,17 +7,27 @@ let score = 0;
 let multiplier = 1;
 
 cookieImage.addEventListener('click', () => {
-    score += multiplier;
-    updateScore();
+  score += multiplier;
+  updateScore();
 });
+/*
 
 function updateScore(){
-    scoreElement.textContent = score;
-    if (score < 50) {
-        scoreElement.style.color = "red";
-    } else {
-        scoreElement.style.color = "green";
-    }
+  scoreElement.textContent = score;
+  if (score < 50) {
+    scoreElement.style.color = "red";
+  } else {
+    scoreElement.style.color = "green";
+  }
+}
+*/
+function updateScore() {
+  scoreElement.textContent = score;
+  if (score < autoClickerCost && score < multiplierPrice && score < bonusCost) {
+    scoreElement.style.color = "red";
+  } else {
+    scoreElement.style.color = "green";
+  }
 }
 
 
@@ -144,6 +154,7 @@ resetButton.addEventListener("click", () => {
   multiplier = 1;
   autoClickers = 0;
   autoClickerCost = 50;
+  multiplierPrice = 20;
   if (autoClickInterval) {
     clearInterval(autoClickInterval);
     autoClickInterval = null;
