@@ -320,9 +320,25 @@ document.addEventListener("DOMContentLoaded", function () {
  * Checks the current score and enables or disables buttons accordingly.
  */
 function checkScoreAndEnableButtons() {
-    autoClickButton.disabled = score < autoClickerCost;
-    multiplierButton.disabled = score < multiplierPrice;
-    bonusButton.disabled = score < bonusCost;
+  autoClickButton.disabled = score < autoClickerCost;
+  autoClickButton.style.backgroundColor = autoClickButton.disabled
+    ? "gray"
+    : "#fbd81a";
+  autoClickButton.style.color = autoClickButton.disabled
+    ? "#D3D3D3"
+    : "#72371b";
+
+  multiplierButton.disabled = score < multiplierPrice;
+  multiplierButton.style.backgroundColor = multiplierButton.disabled
+    ? "gray"
+    : "#fbd81a";
+  multiplierButton.style.color = multiplierButton.disabled
+    ? "#D3D3D3"
+    : "#72371b";
+
+  bonusButton.disabled = score < bonusCost;
+  bonusButton.style.backgroundColor = bonusButton.disabled ? "gray" : "#fbd81a";
+  bonusButton.style.color = bonusButton.disabled ? "#D3D3D3" : "#72371b";
 }
 
 checkScoreAndEnableButtons(); //initialise buttons status on page load
