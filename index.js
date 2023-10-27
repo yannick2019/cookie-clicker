@@ -20,6 +20,8 @@ function updateScore(){
     }
 }
 
+
+
 // multiplier button
 const multiplierButton = document.getElementById("multiplierButton");
 const multiplierPriceLabel = document.getElementById('multiplier-price');
@@ -244,4 +246,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
     setMode(isDarkMode);
   });
+
+  function checkScoreAndEnableButtons() {
+    // checks if score is enough to buy buttons
+    autoClickButton.disabled = score < autoClickerCost;
+    multiplierButton.disabled = score < multiplierPrice;
+    bonusButton.disabled = score < bonusCost;
+  }
+  checkScoreAndEnableButtons(); //initialise buttons status on page load
+  
+  setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
   
