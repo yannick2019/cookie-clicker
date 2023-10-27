@@ -244,6 +244,60 @@ input:checked + label svg.moon {
   fill: #fff;
 }
 
+/*INSTRUCTIONS POP UP*/
+
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    transition: transform 0.3s;
+    z-index: 1000; /* Set a high z-index value to ensure it's at the forefront */
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  ol {
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
 /* Swith to dark/light mode */
 input:checked + label + .dark-mode {
   background-color: #242424;
@@ -334,70 +388,201 @@ input:checked + label + .dark-mode {
     order: 2;
   }
 
-  .inventory {
-    flex-basis: 100%;
-    height: 400px;
-    order: 3;
-  }
 
-  .container {
-    font-size: 120%;
-  }
-  .container .cookie-section > h1 {
-    font-size: 180%;
-  }
+    .hamburger {
+        display: block;
+    }
 
-  .container .store button {
-    font-size: 0.9rem;
-    height: 3rem;
-  }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu {
+        display: flex;
+        position: absolute;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: #dfe6e9;
+        width: 100%;
+        height: 240px;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    header .menu > button {
+        width: 8rem;
+    }
+
+    header > img {
+        width: 50px;
+    }
+
+    .clicker-container {
+        margin: 20px auto;
+    }
+
+    .score-container {
+        font-size: 16px;
+    }
+
+    .cookie-container img {
+        width: 100px; 
+    }
+
+    button {
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    /* layout */
+    .container {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 0 6%;
+    }
+    
+    .cookie-section {
+        flex-basis: 100%;
+        height: 400px;
+        order: 1;
+    }
+    
+    .store {
+        flex-basis: 100%;
+        height: 400px;
+        order: 2;
+    }
+    
+    .inventory {
+        flex-basis: 100%;
+        height: 400px;
+        order: 3;
+    }
+
+    .container {
+        font-size: 120%;
+    }
+    .container .cookie-section > h1 {
+        font-size: 180%;
+    }
+
+    .container .store button {
+        font-size: 0.9rem;
+        height: 3rem;
+    }
+
+    /*POPUP*/
+    .popup-content {
+        width: 90%; /* Increase width for better readability on small screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+      }
+    
+      .close-button {
+        font-size: 20px; /* Slightly smaller close button */
+      }
+    
+      h2 {
+        font-size: 20px; /* Smaller heading font size */
+        margin-bottom: 8px; /* Reduce margin for smaller screens */
+      }
+    
+      p {
+        font-size: 14px; /* Smaller paragraph font size */
+        margin-bottom: 16px; /* Increase margin for better readability */
+      }
+    
+      ol {
+        text-align: left;
+        margin-left: 10px; /* Reduce the left margin for list items */
+      }
+    
+      li {
+        font-size: 14px; /* Smaller font size for list items */
+        margin-bottom: 8px; /* Reduce margin for smaller screens */
+      }
+    
+
 }
 
 /* Responsive design for tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-  header > img {
-    width: 60px;
-  }
 
-  header > button {
-    font-size: 16px;
-  }
+    header > img {
+        width: 60px;
+    }
 
-  .cookie-container img {
-    width: 125px;
-  }
+    header > button {
+        font-size: 16px;
+    }
 
-  .container .cookie-section > h1 {
-    font-size: 30px;
-  }
+    .cookie-container img {
+        width: 125px;
+    }
 
-  .container {
-    padding: 0 10%;
-  }
+    .container .cookie-section > h1 {
+        font-size: 30px;
+    }
 
-  .cookie-section {
-    flex-basis: 100%;
-    height: 400px;
-    order: 1;
-    margin-bottom: 2%;
-  }
+    .container {
+        padding: 0 10%;
+    }
 
-  .store {
-    flex-basis: 49%;
-    height: 400px;
-    order: 3;
-  }
+    .cookie-section {
+        flex-basis: 100%;
+        height: 400px;
+        order: 1;
+        margin-bottom: 2%;
+    }
+    
+    .store {
+        flex-basis: 49%;
+        height: 400px;
+        order: 3;
+    }
+    
+    .inventory {
+        flex-basis: 49%;
+        height: 400px;
+        order: 2;
+    }
 
-  .inventory {
-    flex-basis: 49%;
-    height: 400px;
-    order: 2;
-  }
+    .container .store button {
+        font-size: 0.8rem;
+        height: 3rem;
+    }
 
-  .container .store button {
-    font-size: 0.8rem;
-    height: 3rem;
-  }
+    .popup-content {
+        width: 80%; /* Adjust width for tablet screens */
+      }
+    
+      h2 {
+        font-size: 22px; /* Slightly larger heading font size for tablets */
+      }
+    
+      p {
+        font-size: 16px; /* Restore a slightly larger paragraph font size */
+      }
+    
+      li {
+        font-size: 16px; /* Restore a slightly larger font size for list items */
+      }
+
 }
 
 /* Responsive design for desktop */

@@ -326,6 +326,28 @@ function checkScoreAndEnableButtons() {
 }
 
 checkScoreAndEnableButtons(); //initialise buttons status on page load
-  
+
 setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
+  
+
+  //pop up instructions
+  const instructionsButton = document.getElementById('instruction-btn');
+  const closeInstructionsButton = document.getElementById('close-instructions');
+  const instructionsPopup = document.getElementById('instructions-popup');
+  
+  instructionsButton.addEventListener('click', () => {
+    instructionsPopup.style.display = 'block';
+    setTimeout(() => {
+      instructionsPopup.style.transform = 'translateY(-50%)';
+    }, 10); // A small delay to allow the transition to work
+  });
+  
+  closeInstructionsButton.addEventListener('click', () => {
+    instructionsPopup.style.transform = 'translateY(100%)';
+    setTimeout(() => {
+      instructionsPopup.style.display = 'none';
+    }, 300); // The same duration as the transition
+  });
+
+
 
