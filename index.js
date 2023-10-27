@@ -1,7 +1,7 @@
-const cookieImage = document.getElementById('cookieImage');
-const clickCount = document.getElementById('click-count');
-const scoreElement = document.getElementById('score');
-const clickButton = document.getElementById('clickButton');
+const cookieImage = document.getElementById("cookieImage");
+const clickCount = document.getElementById("click-count");
+const scoreElement = document.getElementById("score");
+const clickButton = document.getElementById("clickButton");
 
 let score = 0;
 let multiplier = 1;
@@ -18,6 +18,7 @@ cookieImage.addEventListener('click', () => {
  * Updates the score displayed on the page and changes its color based on conditions.
  */
 function updateScore() {
+
     scoreElement.textContent = score;
     if (score < autoClickerCost && score < multiplierPrice && score < bonusCost) {
         scoreElement.style.color = "red";
@@ -27,35 +28,41 @@ function updateScore() {
 }
 
 
+
 // multiplier button
 
 const multiplierButton = document.getElementById("multiplierButton");
-const multiplierPriceLabel = document.getElementById('multiplier-price');
-let multiplierPrice = 20; 
+const multiplierPriceLabel = document.getElementById("multiplier-price");
+let multiplierPrice = 20;
 let multiplierPurchaseCount = 0;
+
 
 /**
  * Updates the displayed multiplier price.
  */
+
 function updateMultiplierPrice() {
-    multiplierPriceLabel.textContent = multiplierPrice;
+  multiplierPriceLabel.textContent = multiplierPrice;
 }
 
 /**
  * Updates the text and price on the multiplier button.
  */
 function updateMultiplierButtonText() {
-    multiplierButton.textContent = `Multiplier x${multiplier} ( x${multiplier + 1} Prix: $${multiplierPrice} )`;
+  multiplierButton.textContent = `Multiplier x${multiplier} ( x${
+    multiplier + 1
+  } Prix: $${multiplierPrice} )`;
 }
 
 /**
  * Increases the cost of the multiplier.
  */
 function increaseMultiplierCost() {
-    multiplierPrice = Math.ceil(multiplierPrice * 1.5); 
-    updateMultiplierPrice(); 
-    multiplierPurchaseCount++; 
+  multiplierPrice = Math.ceil(multiplierPrice * 1.5);
+  updateMultiplierPrice();
+  multiplierPurchaseCount++;
 }
+
 
 /**
  * Event listener for clicking the multiplier button.
@@ -73,6 +80,7 @@ multiplierButton.addEventListener('click', () => {
 
 // Auto-clicker button and variables
 
+
 const autoClickButton = document.getElementById('autoClickButton');
 let autoClickers = 0;
 let autoClickerCost = 50;
@@ -82,8 +90,11 @@ let autoClickInterval = null;
  * Updates the text and price on the auto-clicker button.
  */
 function updateAutoClickButtonText() {
-    autoClickButton.innerText = `Auto-Clicker x${autoClickers} (x${autoClickers + 1} Prix: $${autoClickerCost})`;
+  autoClickButton.innerText = `Auto-Clicker x${autoClickers} (x${
+    autoClickers + 1
+  } Prix: $${autoClickerCost})`;
 }
+
 
 /**
  * Event listener for clicking the auto-clicker button.
@@ -92,26 +103,25 @@ autoClickButton.addEventListener('click', () => {
     if (score >= autoClickerCost) { 
         score -= autoClickerCost;   
         updateScore();
-
-        autoClickers ++;
-        autoClickerCost += Math.ceil(autoClickerCost * 0.15 );
+        autoClickers++;
+        autoClickerCost += Math.ceil(autoClickerCost * 0.15);
         updateAutoClickButtonText();
 
-        if (!autoClickInterval) { 
-            autoClickInterval = setInterval( () => { 
-                score += multiplier * autoClickers;
-                updateScore();
-            }, 1000); 
-        }
-        autoClickButton.disabled = score < autoClickerCost;
-    }
-});
 
+    if (!autoClickInterval) {
+      autoClickInterval = setInterval(() => {
+        score += multiplier * autoClickers;
+        updateScore();
+      }, 1000);
+    }
+    autoClickButton.disabled = score < autoClickerCost;
+  }
+});
 
 // design button
 
 const buttons = document.querySelectorAll(".button");
-
+/*
 buttons.forEach((button) => {
     button.addEventListener("mouseover", () => {
         button.style.backgroundColor = "#72371b";
@@ -123,10 +133,9 @@ buttons.forEach((button) => {
         button.style.color = "#72371b";
     });
 });
-
+*/
 
 // Bonus button
-
 const bonusButton = document.getElementById("bonusButton"); 
 const bonusPriceLabel = document.getElementById('bonus-price');
 let bonusCost = 100; 
@@ -135,45 +144,50 @@ let bonusTime = 0;
 /**
  * Increases the cost of the bonus.
  */
+
 function increaseBonusCost() {
-    bonusCost = Math.ceil(bonusCost * 1.5); 
-    bonusPriceLabel.textContent = bonusCost;
+  bonusCost = Math.ceil(bonusCost * 1.5);
+  bonusPriceLabel.textContent = bonusCost;
 }
+
 
 /**
  * Event listener for clicking the bonus button.
  */
-bonusButton.addEventListener('click', () => {
-    if (score >= bonusCost && bonusTime === 0) {
-        score -= bonusCost;
-        bonusTime = 30; 
-        increaseBonusCost();        
-        multiplier *= 2;
+bonusButton.addEventListener("click", () => {
+  if (score >= bonusCost && bonusTime === 0) {
+    score -= bonusCost;
+    bonusTime = 30;
+    increaseBonusCost();
+    multiplier *= 2;
+    bonusButton.textContent = `Bonus actif ( ${bonusTime}s )`;
+
+    const bonusTimerInterval = setInterval(() => {
+      if (bonusTime > 0) {
+        bonusTime--;
         bonusButton.textContent = `Bonus actif ( ${bonusTime}s )`;
-        
-        const bonusTimerInterval = setInterval(() => {
-            if (bonusTime > 0) {
-                bonusTime--;
-                bonusButton.textContent = `Bonus actif ( ${bonusTime}s )`;
-            } else {
-                clearInterval(bonusTimerInterval); 
-                bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
-                multiplier /= 2;
-            }
-        }, 1000);
-        bonusButton.disabled = score < bonusCost;
-    }
+      } else {
+        clearInterval(bonusTimerInterval);
+        bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
+        multiplier /= 2;
+      }
+    }, 1000);
+    bonusButton.disabled = score < bonusCost;
+  }
 });
+
 
 
 // Restart button
 
 const resetButton = document.getElementById('resetButton');
 
+
 /**
  * Event listener for clicking the reset button.
  */
 resetButton.addEventListener("click", () => {
+
     score = 0;
     multiplier = 1;
     autoClickers = 0;
@@ -191,6 +205,7 @@ resetButton.addEventListener("click", () => {
     autoClickButton.innerText = `Auto-Clicker (Prix: $${autoClickerCost})`;
     multiplierButton.textContent = `Multiplier x${multiplier} (x${multiplier + 1} Prix: ${multiplierPrice} )`;
     bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
+
 });
 
 // Rotating cookie images
@@ -214,8 +229,7 @@ function rotateImage() {
     requestAnimationFrame(rotateImage);
 }
 
-rotateImage(); 
-
+rotateImage();
 
 // Navbar mobile
 
@@ -226,20 +240,21 @@ const menu = document.querySelector(".menu");
  * Event listener for the hamburger icon to toggle the mobile menu.
  */
 hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    menu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  menu.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-btn").forEach(btn => btn.
-addEventListener("click", () => {
+document.querySelectorAll(".nav-btn").forEach((btn) =>
+  btn.addEventListener("click", () => {
     hamburger.classList.remove("active");
     menu.classList.remove("active");
-}));
-
+  })
+);
 
 // Dark mode
 
 document.addEventListener("DOMContentLoaded", function () {
+
     const darkModeToggle = document.getElementById("dark-mode-toggle");
     const body = document.body;
     const header = document.querySelector("header");
@@ -313,4 +328,4 @@ function checkScoreAndEnableButtons() {
 checkScoreAndEnableButtons(); //initialise buttons status on page load
   
 setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
-  
+
