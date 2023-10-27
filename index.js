@@ -6,53 +6,60 @@ const clickButton = document.getElementById('clickButton');
 let score = 0;
 let multiplier = 1;
 
+/**
+ * Event listener for clicking the cookie image.
+ */
 cookieImage.addEventListener('click', () => {
-  score += multiplier;
-  updateScore();
+    score += multiplier;
+    updateScore();
 });
-/*
 
-function updateScore(){
-  scoreElement.textContent = score;
-  if (score < 50) {
-    scoreElement.style.color = "red";
-  } else {
-    scoreElement.style.color = "green";
-  }
-}
-*/
+/**
+ * Updates the score displayed on the page and changes its color based on conditions.
+ */
 function updateScore() {
-  scoreElement.textContent = score;
-  if (score < autoClickerCost && score < multiplierPrice && score < bonusCost) {
-    scoreElement.style.color = "red";
-  } else {
-    scoreElement.style.color = "green";
-  }
+    scoreElement.textContent = score;
+    if (score < autoClickerCost && score < multiplierPrice && score < bonusCost) {
+        scoreElement.style.color = "red";
+    } else {
+        scoreElement.style.color = "green";
+    }
 }
-
 
 
 // multiplier button
+
 const multiplierButton = document.getElementById("multiplierButton");
 const multiplierPriceLabel = document.getElementById('multiplier-price');
 let multiplierPrice = 20; 
 let multiplierPurchaseCount = 0;
 
-
+/**
+ * Updates the displayed multiplier price.
+ */
 function updateMultiplierPrice() {
     multiplierPriceLabel.textContent = multiplierPrice;
 }
 
+/**
+ * Updates the text and price on the multiplier button.
+ */
 function updateMultiplierButtonText() {
     multiplierButton.textContent = `Multiplier x${multiplier} ( x${multiplier + 1} Prix: $${multiplierPrice} )`;
 }
 
+/**
+ * Increases the cost of the multiplier.
+ */
 function increaseMultiplierCost() {
     multiplierPrice = Math.ceil(multiplierPrice * 1.5); 
     updateMultiplierPrice(); 
     multiplierPurchaseCount++; 
 }
 
+/**
+ * Event listener for clicking the multiplier button.
+ */
 multiplierButton.addEventListener('click', () => {
     if (score >= multiplierPrice) {
         score -= multiplierPrice; 
@@ -64,17 +71,23 @@ multiplierButton.addEventListener('click', () => {
     }
 });
 
-/**AUTOCLICK */
-const autoClickButton = document.getElementById('autoClickButton');
+// Auto-clicker button and variables
 
+const autoClickButton = document.getElementById('autoClickButton');
 let autoClickers = 0;
 let autoClickerCost = 50;
 let autoClickInterval = null;
 
+/**
+ * Updates the text and price on the auto-clicker button.
+ */
 function updateAutoClickButtonText() {
     autoClickButton.innerText = `Auto-Clicker x${autoClickers} (x${autoClickers + 1} Prix: $${autoClickerCost})`;
 }
 
+/**
+ * Event listener for clicking the auto-clicker button.
+ */
 autoClickButton.addEventListener('click', () => {
     if (score >= autoClickerCost) { 
         score -= autoClickerCost;   
@@ -96,33 +109,40 @@ autoClickButton.addEventListener('click', () => {
 
 
 // design button
+
 const buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
-  button.addEventListener("mouseover", () => {
-    button.style.backgroundColor = "#72371b";
-    button.style.color = "#fbd81a";
-  });
+    button.addEventListener("mouseover", () => {
+        button.style.backgroundColor = "#72371b";
+        button.style.color = "#fbd81a";
+    });
 
-  button.addEventListener("mouseout", () => {
-    button.style.backgroundColor = "#fbd81a";
-    button.style.color = "#72371b";
-  });
+    button.addEventListener("mouseout", () => {
+        button.style.backgroundColor = "#fbd81a";
+        button.style.color = "#72371b";
+    });
 });
 
 
 // Bonus button
+
 const bonusButton = document.getElementById("bonusButton"); 
 const bonusPriceLabel = document.getElementById('bonus-price');
 let bonusCost = 100; 
 let bonusTime = 0;
 
-
+/**
+ * Increases the cost of the bonus.
+ */
 function increaseBonusCost() {
     bonusCost = Math.ceil(bonusCost * 1.5); 
     bonusPriceLabel.textContent = bonusCost;
 }
 
+/**
+ * Event listener for clicking the bonus button.
+ */
 bonusButton.addEventListener('click', () => {
     if (score >= bonusCost && bonusTime === 0) {
         score -= bonusCost;
@@ -146,52 +166,65 @@ bonusButton.addEventListener('click', () => {
 });
 
 
-// Restart 
+// Restart button
+
 const resetButton = document.getElementById('resetButton');
 
+/**
+ * Event listener for clicking the reset button.
+ */
 resetButton.addEventListener("click", () => {
-  score = 0;
-  multiplier = 1;
-  autoClickers = 0;
-  autoClickerCost = 50;
-  multiplierPrice = 20;
-  if (autoClickInterval) {
-    clearInterval(autoClickInterval);
-    autoClickInterval = null;
-  }
-  bonusCost = 100;
-  bonusTime = 0;
-  multiplier = 1;
+    score = 0;
+    multiplier = 1;
+    autoClickers = 0;
+    autoClickerCost = 50;
+    multiplierPrice = 20;
+    if (autoClickInterval) {
+        clearInterval(autoClickInterval);
+        autoClickInterval = null;
+    }
+    bonusCost = 100;
+    bonusTime = 0;
+    multiplier = 1;
 
-  updateScore();
-  autoClickButton.innerText = `Auto-Clicker (Prix: $${autoClickerCost})`;
-  multiplierButton.textContent = `Multiplier x${multiplier} (x${multiplier + 1} Prix: ${multiplierPrice} )`;
-  bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
+    updateScore();
+    autoClickButton.innerText = `Auto-Clicker (Prix: $${autoClickerCost})`;
+    multiplierButton.textContent = `Multiplier x${multiplier} (x${multiplier + 1} Prix: ${multiplierPrice} )`;
+    bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
 });
+
+// Rotating cookie images
 
 const cookieImages = document.getElementsByClassName("rotation");
 
+/**
+ * Rotates the cookie images in the DOM.
+ */
 function rotateImage() {
-  for (let i = 0; i < cookieImages.length; i++) {
-    let rotation =
-      parseFloat(
-        cookieImages[i].style.transform
-          .replace("rotate(", "")
-          .replace("deg)", "")
-      ) || 0;
-    rotation += 0.1;
-    cookieImages[i].style.transform = `rotate(${rotation}deg)`;
-  }
-  requestAnimationFrame(rotateImage);
+    for (let i = 0; i < cookieImages.length; i++) {
+        let rotation =
+        parseFloat(
+            cookieImages[i].style.transform
+            .replace("rotate(", "")
+            .replace("deg)", "")
+        ) || 0;
+        rotation += 0.1;
+        cookieImages[i].style.transform = `rotate(${rotation}deg)`;
+    }
+    requestAnimationFrame(rotateImage);
 }
 
 rotateImage(); 
 
 
-// navbar mobile
+// Navbar mobile
+
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 
+/**
+ * Event listener for the hamburger icon to toggle the mobile menu.
+ */
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     menu.classList.toggle("active");
@@ -204,7 +237,8 @@ addEventListener("click", () => {
 }));
 
 
-// dark mode
+// Dark mode
+
 document.addEventListener("DOMContentLoaded", function () {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
     const body = document.body;
@@ -212,59 +246,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const clickContainer = document.querySelectorAll(".clicker-container");
     const menuMobile = document.querySelector(".menu");
     const bar = document.querySelectorAll(".bar");
-  
 
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+  
+    /**
+     * Toggles the dark mode on or off.
+     */
     function toggleDarkMode() {
       const isDarkMode = body.classList.contains("dark-mode");
       setMode(!isDarkMode);
     }
 
+    /**
+     *  Sets the mode (dark or light) for the application.
+     * @param {boolean} isDarkMode - A boolean indicating whether to enable dark mode.
+    */
     function setMode(isDarkMode) {
-      if (isDarkMode) {
-        body.classList.add("dark-mode");
-        document.body.style.color = "#fff";
-        header.style.backgroundColor = "#212020";
-        menuMobile.style.backgroundColor = "#212020";
-        bar.forEach((element) => {
-            element.style.backgroundColor = "#fbd81a";
-        });
-        clickContainer.forEach((element) => {
-            element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
-            element.style.backgroundColor = "#212020";
-        });
-        
-      } else {
-        body.classList.remove("dark-mode");
-        document.body.style.color = "black";
-        header.style.backgroundColor = "#dfe6e9";
-        menuMobile.style.backgroundColor = "#dfe6e9";
-        bar.forEach((element) => {
-            element.style.backgroundColor = "#9a5738";
-        });
-        clickContainer.forEach((element) => {
-            element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
-            element.style.backgroundColor = "#fff";
-        });
+        if (isDarkMode) {
+            // Dark mode styles
+            body.classList.add("dark-mode");
+            document.body.style.color = "#fff";
+            header.style.backgroundColor = "#212020";
+            menuMobile.style.backgroundColor = "#212020";
+            bar.forEach((element) => {
+                element.style.backgroundColor = "#fbd81a";
+            });
+            clickContainer.forEach((element) => {
+                element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
+                element.style.backgroundColor = "#212020";
+            });
+            
+        } else {
+            // Light mode styles
+            body.classList.remove("dark-mode");
+            document.body.style.color = "black";
+            header.style.backgroundColor = "#dfe6e9";
+            menuMobile.style.backgroundColor = "#dfe6e9";
+            bar.forEach((element) => {
+                element.style.backgroundColor = "#9a5738";
+            });
+            clickContainer.forEach((element) => {
+                element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
+                element.style.backgroundColor = "#fff";
+            });
 
-      }
+        }
     }
   
+    // Event listener for toggling dark mode
     darkModeToggle.addEventListener("change", function () {
-      toggleDarkMode();
+        toggleDarkMode();
     });
   
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-  
     setMode(isDarkMode);
-  });
+});
 
-  function checkScoreAndEnableButtons() {
-    // checks if score is enough to buy buttons
+/**
+ * Checks the current score and enables or disables buttons accordingly.
+ */
+function checkScoreAndEnableButtons() {
     autoClickButton.disabled = score < autoClickerCost;
     multiplierButton.disabled = score < multiplierPrice;
     bonusButton.disabled = score < bonusCost;
-  }
-  checkScoreAndEnableButtons(); //initialise buttons status on page load
+}
+
+checkScoreAndEnableButtons(); //initialise buttons status on page load
   
-  setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
+setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
   
