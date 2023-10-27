@@ -341,6 +341,53 @@ setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
       instructionsPopup.style.transform = 'translateY(-50%)';
     }, 10); // A small delay to allow the transition to work
   });
+
+// JavaScript for the GDPR cookie banner and privacy policy
+
+// Check if the user has previously accepted cookies
+if (localStorage.getItem('cookiesAccepted') === 'true') {
+  hideCookieBanner();
+}
+
+// Function to hide the cookie banner
+function hideCookieBanner() {
+  const cookieBanner = document.getElementById('cookie-banner');
+  cookieBanner.style.display = 'none';
+}
+
+// Function to show the privacy policy section
+function showPrivacyPolicy() {
+  const privacyPolicySection = document.getElementById('privacy-policy');
+  privacyPolicySection.style.display = 'block';
+}
+// Hide privacy policy section
+function hidePrivacyPolicy() {
+  const privacyPolicySection = document.getElementById('privacy-policy');
+  privacyPolicySection.style.display = 'none';
+}
+
+// Function to accept cookies
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  hideCookieBanner();
+}
+
+// Function to decline cookies
+function declineCookies() {
+  localStorage.setItem('cookiesAccepted', 'false');
+  hideCookieBanner();
+  showPrivacyPolicy(); // Show the privacy policy when cookies are declined
+}
+
+// Event listeners for the accept and decline buttons
+document.getElementById('accept-cookies').addEventListener('click', acceptCookies);
+document.getElementById('decline-cookies').addEventListener('click', declineCookies);
+
+// Event listener for the privacy policy link
+document.getElementById('privacy-policy-link').addEventListener('click', showPrivacyPolicy);
+
+// Event listener for the close button
+document.getElementById('close-privacy-policy').addEventListener('click', hidePrivacyPolicy);
   
   closeInstructionsButton.addEventListener('click', () => {
     instructionsPopup.style.transform = 'translateY(100%)';
