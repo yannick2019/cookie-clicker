@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Indulge in the addictive fun of our Cookie Clicker game. Click your way to delicious success as you collect cookies, unlock multipliers, and enjoy various upgrades. How many cookies can you accumulate? Play now and satisfy your virtual sweet tooth!">
-    <meta name="theme-color" content="#dfe6e9">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <meta
+      name="description"
+      content="Indulge in the addictive fun of our Cookie Clicker game. Click your way to delicious success as you collect cookies, unlock multipliers, and enjoy various upgrades. How many cookies can you accumulate? Play now and satisfy your virtual sweet tooth!"
+    />
+    <meta name="theme-color" content="#dfe6e9" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="style.css" />
     <title>Cookie Clicker</title>
   </head>
@@ -15,13 +28,105 @@
     <header>
       <img src="./assets/images/clicker-icon-logo.webp" alt="logo" />
       <nav class="menu">
-        <button id="instruction-btn" class="button nav-btn">Instructions</button>
+        <button id="instruction-btn" class="button nav-btn">
+          Instructions
+        </button>
         <button id="resetButton" class="button nav-btn">Restart</button>
         <section class="switch-mode-toggle nav-btn">
-          <input type="checkbox" id="dark-mode-toggle">
+          <input type="checkbox" id="dark-mode-toggle" />
           <label for="dark-mode-toggle">
-            <svg class="sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="5" stroke="#1C274C" stroke-width="1.5"></circle> <path d="M12 2V4" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12 20V22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 12L2 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 12L20 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M19.7778 4.22266L17.5558 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4.22217 4.22266L6.44418 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M6.44434 17.5557L4.22211 19.7779" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M19.7778 19.7773L17.5558 17.5551" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
-            <svg  class="moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <svg
+              class="sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="5"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                ></circle>
+                <path
+                  d="M12 2V4"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M12 20V22"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M4 12L2 12"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M22 12L20 12"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M19.7778 4.22266L17.5558 6.25424"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M4.22217 4.22266L6.44418 6.25424"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M6.44434 17.5557L4.22211 19.7779"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M19.7778 19.7773L17.5558 17.5551"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              class="moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
           </label>
         </section>
       </nav>
@@ -32,14 +137,19 @@
       </nav>
     </header>
     <main class="container">
-      <section class="cookie-section clicker-container">
+      <section class="cookie-section clicker-container">    
         <h1>Miner Clicker</h1>
-        <hr>
+        <hr />
         <section class="score-container">
           <p><strong id="score">0</strong></p>
         </section>
         <figure class="cookie-container">
-          <img src="./assets/images/clicker-icon.webp" alt="Cookie Image" id="cookieImage" class="rotation"/>        
+          <img
+            src="./assets/images/clicker-icon.webp"
+            alt="Cookie Image"
+            id="cookieImage"
+            class="rotation"
+          />
         </figure>
       </section>
       <section class="store clicker-container">
@@ -61,14 +171,73 @@
           </ul>
         </section>
       </section>    
+
     </main>
+  
     <section id="popup" class="popup">
       <section class="popup-content">
         <strong id="popup-message">This is your message</strong>
         <button id="close-popup">Close</button>
       </section>
     </section>
+    
+    <div id="cookie-banner-container" class="cookie-banner-container">
+      <div id="cookie-banner" class="cookie-banner">
+        <p>
+          This website uses cookies to ensure you get the best experience on our website. By clicking "Accept," you agree to our use of cookies. To learn more, click
+          <a href="javascript:void(0);" id="privacy-policy-link">here</a>.
+        </p>
+        <button id="accept-cookies" class="cookie-button">Accept</button>
+        <button id="decline-cookies" class="cookie-button">Decline</button>
+      </div>
+      
+      <div id="privacy-policy" class="privacy-policy">
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. It is Miner Clicker's policy to respect your privacy regarding any information we may collect from you across our website, Miner Clicker.com, and other sites we own and operate.</p>
+      
+        <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
+      
+        <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification.</p>
+      
+        <p>We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</p>
+      
+        <p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
+      
+        <p>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</p>
+      
+        <p>Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
+      
+        <p>This policy is effective as of 27/10/2023.</p>
 
-    <script src="./index.js"></script>
+        <button id="close-privacy-policy" class="close-button-privacy">Close</button>
+
+      </div>
+    </div>
+    
+
+
+      <div id="instructions-popup" class="popup">
+        <div class="popup-content clicker-container">
+          <span class="close-button" id="close-instructions">&times;</span>
+          <h2>Game Instructions</h2>
+          <p>
+            Welcome to Ore Miner! Your goal is to become the ultimate miner by collecting as many ores as possible. Here's how to play:
+          </p>
+          
+          <ol>
+            <li>Click the ore to mine and collect ores.</li>
+            <li>Each ore click earns you points, and you can increase your mining efficiency with upgrades.</li>
+            <li>Use the "Multiplier" upgrade to increase your ore collection rate.</li>
+            <li>Unlock "Auto-Clickers" to automatically mine ores for you.</li>
+            <li>Activate the "Bonus" for a temporary 200% ore collection boost.</li>
+          </ol>
+          
+          <p>
+            Keep an eye on your score at the top of the screen and strategize to become the richest miner in the game. Have fun and happy mining!
+          </p>      </div>
+      </div>
+    
+
+    <script src="./index.js" type="module"></script>
   </body>
 </html>

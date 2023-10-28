@@ -69,15 +69,15 @@ function displayActionLog() {
 // multiplier button
 
 const multiplierButton = document.getElementById("multiplierButton");
-const multiplierPriceLabel = document.getElementById('multiplier-price');
-let multiplierPrice = 20; 
+const multiplierPriceLabel = document.getElementById("multiplier-price");
+let multiplierPrice = 20;
 let multiplierPurchaseCount = 0;
 
 /**
  * Updates the displayed multiplier price.
  */
 function updateMultiplierPrice() {
-    multiplierPriceLabel.textContent = multiplierPrice;
+  multiplierPriceLabel.textContent = multiplierPrice;
 }
 
 /**
@@ -91,11 +91,15 @@ function updateMultiplierButtonText() {
  * Increases the cost of the multiplier.
  */
 function increaseMultiplierCost() {
-    multiplierPrice = Math.ceil(multiplierPrice * 1.5); 
-    updateMultiplierPrice(); 
-    multiplierPurchaseCount++; 
+  multiplierPrice = Math.ceil(multiplierPrice * 1.5);
+  updateMultiplierPrice();
+  multiplierPurchaseCount++;
 }
 
+
+/**
+ * Event listener for clicking the multiplier button.
+ */
 multiplierButton.addEventListener('click', () => {
     openLog.style.display = "none";
     const iconSrc = './assets/images/mine.png';
@@ -110,9 +114,10 @@ multiplierButton.addEventListener('click', () => {
     }
 });
 
-/**AUTOCLICK */
-const autoClickButton = document.getElementById('autoClickButton');
+// Auto-clicker button and variables
 
+
+const autoClickButton = document.getElementById('autoClickButton');
 let autoClickers = 0;
 let autoClickerCost = 50;
 let autoClickInterval = null;
@@ -124,6 +129,10 @@ function updateAutoClickButtonText() {
     autoClickButton.innerText = `Auto-Clicker ( Prix: ${autoClickerCost} )`;
 }
 
+
+/**
+ * Event listener for clicking the auto-clicker button.
+ */
 autoClickButton.addEventListener('click', () => {
     openLog.style.display = "none";
     const iconSrc = './assets/images/icons8-clicker-50.png';
@@ -143,8 +152,9 @@ autoClickButton.addEventListener('click', () => {
         autoClickButton.disabled = score < autoClickerCost;
         logAction(`Auto-click increased to ${autoClickers}`, 'autoClicker', iconSrc);
     }
+    autoClickButton.disabled = score < autoClickerCost;
+  }
 });
-
 
 // design button
 
@@ -161,7 +171,6 @@ buttons.forEach((button) => {
     });
 });
 
-
 // Bonus button
 
 const bonusButton = document.getElementById("bonusButton"); 
@@ -173,8 +182,8 @@ let bonusTime = 0;
  * Increases the cost of the bonus.
  */
 function increaseBonusCost() {
-    bonusCost = Math.ceil(bonusCost * 1.5); 
-    bonusPriceLabel.textContent = bonusCost;
+  bonusCost = Math.ceil(bonusCost * 1.5);
+  bonusPriceLabel.textContent = bonusCost;
 }
 
 bonusButton.addEventListener('click', () => {
@@ -204,7 +213,10 @@ bonusButton.addEventListener('click', () => {
 });
 
 
-// Restart 
+
+
+// Restart button
+
 
 const resetButton = document.getElementById('resetButton');
 
@@ -227,6 +239,7 @@ resetButton.addEventListener("click", () => {
     bonusButton.textContent = `Bonus (200%) - Prix: ${bonusCost}`;
     location.reload();
     openLog.style.display = "block";
+
 });
 
 // Rotating cookie images
@@ -250,29 +263,29 @@ function rotateImage() {
     requestAnimationFrame(rotateImage);
 }
 
-rotateImage(); 
+rotateImage();
 
-
-// navbar mobile
+// Navbar mobile
 
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 
 hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    menu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  menu.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-btn").forEach(btn => btn.
-addEventListener("click", () => {
+document.querySelectorAll(".nav-btn").forEach((btn) =>
+  btn.addEventListener("click", () => {
     hamburger.classList.remove("active");
     menu.classList.remove("active");
-}));
+  })
+);
 
-
-// dark mode
+// Dark mode
 
 document.addEventListener("DOMContentLoaded", function () {
+
     const darkModeToggle = document.getElementById("dark-mode-toggle");
     const body = document.body;
     const header = document.querySelector("header");
@@ -280,6 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuMobile = document.querySelector(".menu");
     const bar = document.querySelectorAll(".bar");
     const popupMessage = document.getElementById("popup-message");
+
     const isDarkMode = localStorage.getItem("darkMode") === "true";
   
     /**
@@ -324,11 +338,12 @@ document.addEventListener("DOMContentLoaded", function () {
             element.style.backgroundColor = "#fff";
         });
 
-      }
+        }
     }
   
+    // Event listener for toggling dark mode
     darkModeToggle.addEventListener("change", function () {
-      toggleDarkMode();
+        toggleDarkMode();
     });
   
     setMode(isDarkMode);
@@ -371,3 +386,72 @@ setInterval(checkScoreAndEnableButtons, 100); //checks every 0.1s (quick refresh
 
 displayActionLog();
   
+
+  //pop up instructions
+  const instructionsButton = document.getElementById('instruction-btn');
+  const closeInstructionsButton = document.getElementById('close-instructions');
+  const instructionsPopup = document.getElementById('instructions-popup');
+  
+  instructionsButton.addEventListener('click', () => {
+    instructionsPopup.style.display = 'block';
+    setTimeout(() => {
+      instructionsPopup.style.transform = 'translateY(-50%)';
+    }, 10); // A small delay to allow the transition to work
+  });
+
+// JavaScript for the GDPR cookie banner and privacy policy
+
+// Check if the user has previously accepted cookies
+if (localStorage.getItem('cookiesAccepted') === 'true') {
+  hideCookieBanner();
+}
+
+// Function to hide the cookie banner
+function hideCookieBanner() {
+  const cookieBanner = document.getElementById('cookie-banner');
+  cookieBanner.style.display = 'none';
+}
+
+// Function to show the privacy policy section
+function showPrivacyPolicy() {
+  const privacyPolicySection = document.getElementById('privacy-policy');
+  privacyPolicySection.style.display = 'block';
+}
+// Hide privacy policy section
+function hidePrivacyPolicy() {
+  const privacyPolicySection = document.getElementById('privacy-policy');
+  privacyPolicySection.style.display = 'none';
+}
+
+// Function to accept cookies
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  hideCookieBanner();
+}
+
+// Function to decline cookies
+function declineCookies() {
+  localStorage.setItem('cookiesAccepted', 'false');
+  hideCookieBanner();
+  showPrivacyPolicy(); // Show the privacy policy when cookies are declined
+}
+
+// Event listeners for the accept and decline buttons
+document.getElementById('accept-cookies').addEventListener('click', acceptCookies);
+document.getElementById('decline-cookies').addEventListener('click', declineCookies);
+
+// Event listener for the privacy policy link
+document.getElementById('privacy-policy-link').addEventListener('click', showPrivacyPolicy);
+
+// Event listener for the close button
+document.getElementById('close-privacy-policy').addEventListener('click', hidePrivacyPolicy);
+  
+  closeInstructionsButton.addEventListener('click', () => {
+    instructionsPopup.style.transform = 'translateY(100%)';
+    setTimeout(() => {
+      instructionsPopup.style.display = 'none';
+    }, 300); // The same duration as the transition
+  });
+
+
+
