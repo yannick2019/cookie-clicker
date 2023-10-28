@@ -154,23 +154,32 @@
       </section>
       <section class="store clicker-container">
         <h2>Store</h2>
-        <hr />
-        <button id="multiplierButton" class="button">
-          Multiplier x1 (x2 Prix: $<strong id="multiplier-price">20</strong>)
-        </button>
-        <button id="autoClickButton" class="button">
-          Auto-Clicker (Prix: $50)
-        </button>
-        <button id="bonusButton" class="button">
-          Bonus (200%) - Prix: $<strong id="bonus-price">100</strong>
-        </button>
+        <hr>
+        <button id="multiplierButton" class="button">Multiplier x1 (x2 Prix: <strong id="multiplier-price">20</strong>)</button>
+        <button id="autoClickButton" class="button">Auto-Clicker (Prix: 50)</button>
+        <button id="bonusButton" class="button">Bonus (200%) - Prix: <strong id="bonus-price">100</strong></button>
       </section>
       <section class="inventory clicker-container">
         <h2>Inventory</h2>
-        <hr />
-      </section>
+        <hr>
+        <section id="actionLog">
+          <ul id="logList">
+            <li id="open-log">
+              <img src="./assets/images/clicker-icon-50.png" alt="logo" class="action-icon">&nbsp;
+              Inventory is empty!
+            </li>
+          </ul>
+        </section>
+      </section>    
 
     </main>
+  
+    <section id="popup" class="popup">
+      <section class="popup-content">
+        <strong id="popup-message">This is your message</strong>
+        <button id="close-popup">Close</button>
+      </section>
+    </section>
     
     <div id="cookie-banner-container" class="cookie-banner-container">
       <div id="cookie-banner" class="cookie-banner">
@@ -227,9 +236,7 @@
             Keep an eye on your score at the top of the screen and strategize to become the richest miner in the game. Have fun and happy mining!
           </p>      </div>
       </div>
-  
-    </main>
-
+    
 
     <script src="./index.js" type="module"></script>
   </body>
