@@ -292,6 +292,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuMobile = document.querySelector(".menu");
     const bar = document.querySelectorAll(".bar");
     const popupMessage = document.getElementById("popup-message");
+    const cookieBanner = document.getElementById('cookie-banner');
+    const privacyPolicySection = document.getElementById('privacy-policy');
 
     const isDarkMode = localStorage.getItem("darkMode") === "true";
   
@@ -308,34 +310,38 @@ document.addEventListener("DOMContentLoaded", function () {
      * @param { boolean } isDarkMode - A boolean indicating whether to enable dark mode.
     */
     function setMode(isDarkMode) {
-      if (isDarkMode) {
-        // Dark mode styles
-        body.classList.add("dark-mode");
-        document.body.style.color = "#fff";
-        popupMessage.style.color = "black";
-        header.style.backgroundColor = "#212020";
-        menuMobile.style.backgroundColor = "#212020";
-        bar.forEach((element) => {
-            element.style.backgroundColor = "#fbd81a";
-        });
-        clickContainer.forEach((element) => {
-            element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
-            element.style.backgroundColor = "#212020";
-        });
+        if (isDarkMode) {
+            // Dark mode styles
+            body.classList.add("dark-mode");
+            document.body.style.color = "#fff";
+            popupMessage.style.color = "black";
+            header.style.backgroundColor = "#212020";
+            menuMobile.style.backgroundColor = "#212020";
+            bar.forEach((element) => {
+                element.style.backgroundColor = "#fbd81a";
+            });
+            clickContainer.forEach((element) => {
+                element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
+                element.style.backgroundColor = "#212020";
+            });
+            cookieBanner.style.backgroundColor = "rgb(53, 54, 58)";
+            privacyPolicySection.style.backgroundColor = "rgb(53, 54, 58)";
         
-      } else {
-        // Light mode styles
-        body.classList.remove("dark-mode");
-        document.body.style.color = "black";
-        header.style.backgroundColor = "#dfe6e9";
-        menuMobile.style.backgroundColor = "#dfe6e9";
-        bar.forEach((element) => {
-            element.style.backgroundColor = "#9a5738";
-        });
-        clickContainer.forEach((element) => {
-            element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
-            element.style.backgroundColor = "#fff";
-        });
+        } else {
+            // Light mode styles
+            body.classList.remove("dark-mode");
+            document.body.style.color = "black";
+            header.style.backgroundColor = "#dfe6e9";
+            menuMobile.style.backgroundColor = "#dfe6e9";
+            bar.forEach((element) => {
+                element.style.backgroundColor = "#9a5738";
+            });
+            clickContainer.forEach((element) => {
+                element.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px;";
+                element.style.backgroundColor = "#fff";
+            });
+            cookieBanner.style.backgroundColor = "#fff";
+            privacyPolicySection.style.backgroundColor = "#fff";
 
         }
     }

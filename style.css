@@ -36,7 +36,7 @@ header {
 
 header > img {
     width: 50px; 
-    height: auto;
+    height: 50px;
     margin-right: 10px;
     margin-bottom: 2px;
 }
@@ -105,7 +105,7 @@ strong {
 
 .container .cookie-section .cookie-container img {
     width: 200px;
-    height: auto;
+    height: 200px;
     cursor: pointer;
 }
 
@@ -332,15 +332,16 @@ li {
     gap: 0.4rem;
     width: 100%;
     height: auto;
-    background-color: #2980b9;
+    background-color: #0866a5;
     color: #fff;
     padding: 1rem 0;
-    font-size: 14px;
+    font-size: 16px;
     transition: transform 0.3s;
 }
 
 .action-icon {
     width: 40px;
+    height: 40px;
 }
 
 /* Popup that display when buttons are enabled  */
@@ -701,7 +702,7 @@ li {
     }
 
     .container .store button {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         height: 3rem;
     }
 
@@ -723,6 +724,13 @@ li {
 
 }
 
+@media (min-width: 1025px) and (max-width: 1279px){
+    .container .store button {
+        font-size: 0.8rem;
+        height: 3rem;
+    }
+}
+
 /* Responsive design for desktop */
 @media (min-width: 1280px) {
     .container {
@@ -733,6 +741,10 @@ li {
         font-size: 18px; 
     }
 
+    .container .store button {
+        font-size: 0.9rem;
+        height: 3rem;
+    }
 
     .cookie-container img {
         width: 150px;
