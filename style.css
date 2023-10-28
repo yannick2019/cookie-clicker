@@ -332,6 +332,7 @@ li {
     color: #fff;
     padding: 1rem 0;
     font-size: 14px;
+    transition: transform 0.3s;
 }
 
 .action-icon {
@@ -339,7 +340,7 @@ li {
 }
 
 /* Popup that display when buttons are enabled  */
-.popup {
+.popup2 {
     position: absolute;
     bottom: 8%;
     left: 8%;
@@ -348,9 +349,10 @@ li {
     height: 80px;
     display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
   
-.popup-content {
+.popup-content2 {
     padding: 10px;
     display: flex;
     justify-content: space-between;

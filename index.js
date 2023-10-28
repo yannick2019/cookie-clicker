@@ -370,8 +370,8 @@ function checkScoreAndEnableButtons() {
  * @param { string } message 
  */
 function showPopup(message) {
-    const popup = document.getElementById("popup");
-    const popupMessage = document.getElementById("popup-message");
+    const popup = document.getElementById("popup2");
+    const popupMessage = document.getElementById("popup-message2");
     popupMessage.textContent = message;
     popup.style.display = "block";
     setTimeout(() => {
