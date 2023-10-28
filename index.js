@@ -153,7 +153,6 @@ autoClickButton.addEventListener('click', () => {
         logAction(`Auto-click increased to ${autoClickers}`, 'autoClicker', iconSrc);
     }
     autoClickButton.disabled = score < autoClickerCost;
-  }
 });
 
 // design button
