@@ -35,7 +35,7 @@ header {
 }
 
 header > img {
-    width: 30px; 
+    width: 50px; 
     height: auto;
     margin-right: 10px;
     margin-bottom: 2px;
@@ -238,12 +238,76 @@ input:checked + label svg.moon {
     fill: #fff;
 }
 
-/* Swith to dark/light mode */
-input:checked + label + .dark-mode {
-    background-color: #242424;
+/* Toggle button dark/light mode  END */
+
+/* Action box */
+.inventory {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Toggle button dark/light mode  END */
+.inventory hr {
+    margin-bottom: 1.6rem;
+}
+
+#actionLog {
+    display: none;
+}
+
+.inventory #actionLog ul {
+    list-style-type: none;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.inventory #actionLog ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0.4rem;
+    width: 100%;
+    height: auto;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 1rem 0;
+    font-size: 14px;
+}
+
+.action-icon {
+    width: 40px;
+}
+
+/* Popup that display when buttons are enabled  */
+.popup {
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    background-color: #f1f1f1;
+    width: 250px;
+    height: 80px;
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+.popup-content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#close-popup {
+    background-color: #fbd81a;
+    color: #72371b;
+    border: none;
+    padding: 5px 5px;
+    width: 100px;
+    cursor: pointer;
+}
 
 
 /* Responsive design for mobile */
@@ -286,10 +350,6 @@ input:checked + label + .dark-mode {
 
     header .menu > button {
         width: 8rem;
-    }
-
-    header > img {
-        width: 50px;
     }
 
     .clicker-container {
@@ -350,9 +410,6 @@ input:checked + label + .dark-mode {
 
 /* Responsive design for tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-    header > img {
-        width: 60px;
-    }
 
     header > button {
         font-size: 16px;
@@ -399,10 +456,6 @@ input:checked + label + .dark-mode {
 @media (min-width: 1280px) {
     .container {
         max-width: 1536px;
-    }
-
-    header > img {
-        width: 60px; 
     }
 
     header > button {
