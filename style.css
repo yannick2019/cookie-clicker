@@ -345,16 +345,18 @@ li {
 }
 
 /* Popup that display when buttons are enabled  */
+
 .popup2 {
+    background-color: #dfe6e9;
+    color: black;
+    width: 250px;
+    height: 80px;
     position: absolute;
     bottom: 8%;
     left: 8%;
-    background-color: #f1f1f1;
-    width: 250px;
-    height: 80px;
     display: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s;
 }
   
 .popup-content2 {
@@ -369,7 +371,7 @@ li {
     color: #72371b;
     border: none;
     padding: 5px 5px;
-    width: 100px;
+    width: 80px;
     cursor: pointer;
 }
 

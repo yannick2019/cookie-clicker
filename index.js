@@ -111,6 +111,7 @@ multiplierButton.addEventListener('click', () => {
         scoreElement.textContent = score; 
         multiplierButton.disabled = score < multiplierPrice;
         logAction(`Multiplier increased to ${multiplier}`, 'multiplier', iconSrc);
+        showPopup("You added multiplier");
     }
 });
 
@@ -150,7 +151,8 @@ autoClickButton.addEventListener('click', () => {
             }, 1000); 
         }
         autoClickButton.disabled = score < autoClickerCost;
-        logAction(`Auto-click increased to ${autoClickers}`, 'autoClicker', iconSrc);
+        logAction(`Auto-Clicker increased to ${autoClickers}`, 'autoClicker', iconSrc);
+        showPopup("You added Auto-Clicker");
     }
     autoClickButton.disabled = score < autoClickerCost;
 });
@@ -208,6 +210,7 @@ bonusButton.addEventListener('click', () => {
         }, 1000);
         bonusButton.disabled = score < bonusCost;
         logAction(`Bonus activated for ${bonusTime}s`, 'bonus', iconSrc );
+        showPopup("You activated Bonus");
     }
 });
 
@@ -291,7 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const clickContainer = document.querySelectorAll(".clicker-container");
     const menuMobile = document.querySelector(".menu");
     const bar = document.querySelectorAll(".bar");
-    const popupMessage = document.getElementById("popup-message");
     const cookieBanner = document.getElementById('cookie-banner');
     const privacyPolicySection = document.getElementById('privacy-policy');
 
@@ -314,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Dark mode styles
             body.classList.add("dark-mode");
             document.body.style.color = "#fff";
-            popupMessage.style.color = "black";
             header.style.backgroundColor = "#212020";
             menuMobile.style.backgroundColor = "#212020";
             bar.forEach((element) => {
@@ -364,9 +365,9 @@ function checkScoreAndEnableButtons() {
   
     multiplierButton.disabled = score < multiplierPrice;
     multiplierButton.style.backgroundColor = multiplierButton.disabled ? "gray" : "#fbd81a";
-    multiplierButton.style.color = multiplierButton.disabled ? "#D3D3D3" : "#72371b";
+    multiplierButton.style.color = multiplierButton.disabled ? "#D3D3D3" : "#72371b";   
   
-    bonusButton.disabled = score < bonusCost ;
+    bonusButton.disabled = score < bonusCost;
     bonusButton.style.backgroundColor = bonusButton.disabled ? "gray" : "#fbd81a";
     bonusButton.style.color = bonusButton.disabled ? "#D3D3D3" : "#72371b";
 }
@@ -376,13 +377,19 @@ function checkScoreAndEnableButtons() {
  * @param { string } message 
  */
 function showPopup(message) {
-    const popup = document.getElementById("popup2");
-    const popupMessage = document.getElementById("popup-message2");
+    const popup = document.getElementById("popup");
+    const popupMessage = document.getElementById("popup-message");
+    const closePupup = document.getElementById("close-popup");
+
     popupMessage.textContent = message;
     popup.style.display = "block";
+    closePupup.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
     setTimeout(() => {
       popup.style.display = "none";
-    }, 4000); // Hide after 3 seconds 
+    }, 4000);   
 }
 
 checkScoreAndEnableButtons(); //initialise buttons status on page load
@@ -393,16 +400,16 @@ displayActionLog();
   
 
   //pop up instructions
-  const instructionsButton = document.getElementById('instruction-btn');
-  const closeInstructionsButton = document.getElementById('close-instructions');
-  const instructionsPopup = document.getElementById('instructions-popup');
+const instructionsButton = document.getElementById('instruction-btn');
+const closeInstructionsButton = document.getElementById('close-instructions');
+const instructionsPopup = document.getElementById('instructions-popup');
   
-  instructionsButton.addEventListener('click', () => {
+instructionsButton.addEventListener('click', () => {
     instructionsPopup.style.display = 'block';
     setTimeout(() => {
-      instructionsPopup.style.transform = 'translateY(-50%)';
-    }, 10); // A small delay to allow the transition to work
-  });
+        instructionsPopup.style.transform = 'translateY(-50%)';
+    }, 10); 
+});
 
 // JavaScript for the GDPR cookie banner and privacy policy
 
@@ -413,8 +420,10 @@ if (localStorage.getItem('cookiesAccepted') === 'true') {
 
 // Function to hide the cookie banner
 function hideCookieBanner() {
+  const cookieBannerContainer = document.getElementById("cookie-banner-container");
   const cookieBanner = document.getElementById('cookie-banner');
   cookieBanner.style.display = 'none';
+  cookieBannerContainer.style.display = 'none';
 }
 
 // Function to show the privacy policy section
