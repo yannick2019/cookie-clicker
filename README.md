@@ -2,47 +2,41 @@
 
 ![!JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
 
-## Game cookie clicker
+## Miner (cookie) clicker
 
-This project showcases our game cookie clicker built with Javascript, CSS and HTML.
+Link to the game : [![Custom Badge](https://img.shields.io/badge/Miner%20Clicker-Click%20Here-%23d37810?style=flat&link=https%3A%2F%2Fslatohamid.github.io%2Fcookie-clicker%2F)](https://slatohamid.github.io/cookie-clicker/)
 
 </div>
 
-## Mission Objectives
-So, the main goal here was to level up our:
+## description
 
-JavaScript skills
-team skills
-git conflict skills
+This project showcases our game cookie clicker built with Javascript, CSS and HTML.
 
-Here are the highlights:
+version of the famous game Cookie Clicker made during our training process at Becode.
 
-## Highlights
-We will structure our project as follows:
+This project was a collaborative effort by:
 
-### Each of us will be responsible for a specific part of the JavaScript development:
-#### Monday 
-- Multiplier Button: Hamid will work on this on Monday throughout the day, and README file.
-- Auto-Clicker: Jerome will take charge of this on Monday throughout the day.
-- Bonus Button: Yannick will handle this on Monday throughout the day.
-- By the end of the day, we will merge our respective branches.
+- Yannick
+- Jerome
+- Hamid
+- 
+This game was developed during the week of October 23 to October 29, 2023.
 
-#### Tuesday
+## Preview
 
-our plan until the lunch break is as follows:
+![Screenshot](https://github.com/slatohamid/cookie-clicker/assets/117818692/47b84ef3-089c-4646-9475-d8784892d4c3)
 
-- Yannick: Layout and responsiveness
-- Hamid: Button design
-- Jerome: Semantic improvements
 
-To track our progress, we are utilizing the Trello project management tool. 
+## Features
+#### Mandtory
 
-https://trello.com/invite/b/rjWyubMI/ATTI6b4c341f6abbdc0a9ca9eee3c2ccc45aC1F254A0/cookie-clicker
+- Multiplier : Multiply the amount of points you generate per click (increases its cost + increases the multiplier value every time it is purchased)
+- Bonus : For a limited time double the amount of points you generate per click (increases its cost every time it is purchased)
+- Auto-click : Generate points automatically (inscreases its cost and reduces the interval every time it is purchased)
 
-# Preview
+#### Bonus
+Light and Dark mode
 
-## Achievements
 
-## Websites used to create this site
 
 
