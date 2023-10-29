@@ -8,7 +8,7 @@ Link to the game : [![Custom Badge](https://img.shields.io/badge/Miner%20Clicker
 
 </div>
 
-## description
+## Description
 
 This project showcases our game cookie clicker built with Javascript, CSS and HTML.
 
@@ -19,7 +19,7 @@ This project was a collaborative effort by:
 - Yannick
 - Jerome
 - Hamid
-- 
+  
 This game was developed during the week of October 23 to October 29, 2023.
 
 ## Preview
@@ -36,6 +36,17 @@ This game was developed during the week of October 23 to October 29, 2023.
 
 #### Bonus
 Light and Dark mode
+
+## Technologies used
+- Vite
+- HTML5
+- CSS
+- JavaScript
+
+## Develop
+`git clone project`
+`pnpm install # or npm install # or yarn to install dependencies`
+`pnpm run start # or npm start # or yarn ... to start developing`
 
 
 
