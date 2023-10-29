@@ -44,9 +44,9 @@ Light and Dark mode
 - JavaScript
 
 ## Develop
-`git clone project`
-`pnpm install # or npm install # or yarn to install dependencies`
-`pnpm run start # or npm start # or yarn ... to start developing`
+- `git clone project`
+- `pnpm install # or npm install # or yarn to install dependencies`
+- `pnpm run start # or npm start # or yarn ... to start developing`
 
 
 
