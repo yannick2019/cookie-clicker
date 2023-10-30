@@ -23,7 +23,8 @@ This game was developed during the week of October 23 to October 29, 2023.
 
 ## Preview
 
-![Screenshot](https://github.com/slatohamid/cookie-clicker/assets/117818692/47b84ef3-089c-4646-9475-d8784892d4c3)
+![Screenshot](https://github.com/slatohamid/cookie-clicker/assets/117818692/12008191-04cc-4f5d-8e78-1fe0c1dc982f)
+
 
 
 ## Features
