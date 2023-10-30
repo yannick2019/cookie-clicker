@@ -2,10 +2,9 @@
 
 ![!JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
 
-## Miner (cookie) clicker
+## Cookie (Miner) Clicker
 
-Link to the game : [![Custom Badge](https://img.shields.io/badge/Miner%20Clicker-Click%20Here-%23d37810?style=flat&link=https%3A%2F%2Fslatohamid.github.io%2Fcookie-clicker%2F)](https://slatohamid.github.io/cookie-clicker/)
-
+Link to the game : [![Custom Badge](https://img.shields.io/badge/Miner%20Clicker-Click%20Here-%23fbd81a?style=flat&link=https%3A%2F%2Fslatohamid.github.io%2Fcookie-clicker%2F)](https://slatohamid.github.io/cookie-clicker/)
 </div>
 
 ## Description
@@ -43,10 +42,17 @@ Light and Dark mode
 - CSS
 - JavaScript
 
-## Develop
+## Development
 - `git clone project`
 - `pnpm install # or npm install # or yarn to install dependencies`
 - `pnpm run start # or npm start # or yarn ... to start developing`
+#### or 
+- Clone our project than use Liveserver to be able to see the development as it's done.
+## Note
+We should have employed Vite along with JSdoc/TS right from the project's outset. However, we only integrated it towards the end as an additional learning exercise, with the aim of deploying it using Vite.
+
+Link to our Vite deployment:  [![Custom Badge](https://img.shields.io/badge/Vite-Click%20Here-%23916cfe?style=flat&link=https%3A%2F%2Fslatohamid.github.io%2Fcookie-clicker%2F)](https://slatohamid.github.io/cookie-clicker/)
+
 
 
 
