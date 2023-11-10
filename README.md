@@ -40,6 +40,7 @@ Light and Dark mode
 
 ## Copyright
 2023
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-%230969ca?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/yannick-yanga-4aa4a6280/)
 
 
 
