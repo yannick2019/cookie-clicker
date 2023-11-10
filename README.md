@@ -39,8 +39,7 @@ Light and Dark mode
 - `git clone project`
 - `pnpm install # or npm install # or yarn to install dependencies`
 - `pnpm run start # or npm start # or yarn ... to start developing`
-#### or 
-- Clone the project that use Liveserver to be able to see the development as it's done.
+
 
 
 
